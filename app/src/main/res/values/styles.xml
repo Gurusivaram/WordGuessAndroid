@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextScore" parent="Widget.MaterialComponents.TextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/black1</item>
+        <item name="android:textSize">@dimen/score_text_size</item>
+    </style>
+
+    <style name="TextAnswer" parent="Widget.MaterialComponents.TextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginLeft">@dimen/answer_box_margin_horizontal</item>
+        <item name="android:layout_marginRight">@dimen/answer_box_margin_horizontal</item>
+        <item name="android:background">@drawable/bg_answers</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/answer_box_padding</item>
+        <item name="android:textColor">@color/answerColor</item>
+        <item name="android:textSize">@dimen/answer_text_size</item>
+    </style>
+
+    <style name="Icons" parent="TextAppearance.AppCompat">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:visibility">invisible</item>
+    </style>
+
+    <style name="TextCenterWord" parent="Widget.MaterialComponents.TextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/spacing_40</item>
+        <item name="android:background">@drawable/bg_word</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/wordColor</item>
+        <item name="android:textSize">@dimen/font_50</item>
+    </style>
+
+    <style name="TextCurrentInfo" parent="Widget.MaterialComponents.TextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/spacing_30</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/font_24</item>
+    </style>
+
+    <style name="TextCurrentExplanation" parent="Widget.MaterialComponents.TextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/spacing_20</item>
+        <item name="android:layout_marginRight">@dimen/spacing_20</item>
+        <item name="android:layout_marginTop">@dimen/spacing_20</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/titleColor</item>
+        <item name="android:textSize">@dimen/font_18</item>
+    </style>
+
+</resources>

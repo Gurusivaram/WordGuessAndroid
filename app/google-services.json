@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "533150340908",
+    "project_id": "word-guess-007",
+    "storage_bucket": "word-guess-007.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:533150340908:android:b34db068b152ef2174fe89",
+        "android_client_info": {
+          "package_name": "com.strng.wordgame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "533150340908-nprroammbpffqd5vnp3q0cke8gjtbesq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNVcrTPGana0QxwbUpHfefHQIm1Wbjymg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "533150340908-nprroammbpffqd5vnp3q0cke8gjtbesq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

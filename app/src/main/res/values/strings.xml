@@ -1,0 +1,25 @@
+<resources>
+    <string name="_3_by_5">3/5</string>
+    <string name="app_name">WordGame</string>
+    <string name="answer_1">Answer 1</string>
+    <string name="answer_2">Answer 2</string>
+    <string name="congrats">Congrats!!!</string>
+    <string name="error">Error!!!</string>
+    <string name="level_1">Level 1</string>
+    <string name="please_click_start_to_play_next_level">Please click Start to play next level</string>
+    <string name="please_click_start_to_play_the_game">Please click Start to play the game</string>
+    <string name="please_wait">Please wait…</string>
+    <string name="retry">Retry</string>
+    <string name="start">Start</string>
+    <string name="sorry">Sorry :(</string>
+    <string name="score">Score :</string>
+    <string name="similar_question">Which one is similar to the above word?</string>
+    <string name="something_went_wrong">Something went wrong, please check your network connection!</string>
+    <string name="trying_t0_fetch_questions_from_server">Trying to fetch questions from server</string>
+    <string name="wg">WG</string>
+    <string name="welcome">Welcome</string>
+    <string name="word_guess">Word Guess</string>
+    <string name="you_cant_step_to_next_level_replay_the_level_to_get_more_points">You can\'t step to next level, replay the level to get more points!</string>
+    <string name="zero">0</string>
+    <string name="word">Word</string>
+</resources>

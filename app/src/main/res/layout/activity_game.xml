@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_game_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameActivity">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_20"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/word_guess"
+        android:textColor="@color/titleColor"
+        android:textSize="@dimen/title_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progress_game"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_20"
+        android:layout_marginTop="@dimen/spacing_20"
+        android:layout_marginEnd="@dimen/spacing_20"
+        android:max="6"
+        android:minHeight="@dimen/spacing_10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_level_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_10"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/answerColor"
+        android:textSize="@dimen/title_text_size"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progress_game"
+        tools:text="@string/level_1" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_score_heading"
+        style="@style/TextScore"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/score"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/progress_timer"
+        app:layout_constraintEnd_toStartOf="@+id/tv_score_number"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_level_number" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_score_number"
+        style="@style/TextScore"
+        android:layout_marginStart="@dimen/spacing_5"
+        android:layout_marginLeft="@dimen/spacing_5"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/zero"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/progress_timer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_score_heading"
+        app:layout_constraintTop_toBottomOf="@+id/tv_level_number" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_up"
+        style="@style/Icons"
+        android:layout_marginStart="@dimen/score_icon_margin_start"
+        android:layout_marginLeft="@dimen/score_icon_margin_start"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_score_number"
+        app:layout_constraintStart_toEndOf="@+id/tv_score_number"
+        app:layout_constraintTop_toTopOf="@+id/tv_score_number"
+        app:srcCompat="@drawable/ic_up" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_down"
+        style="@style/Icons"
+        android:layout_marginStart="@dimen/score_icon_margin_start"
+        android:layout_marginLeft="@dimen/score_icon_margin_start"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_score_number"
+        app:layout_constraintStart_toEndOf="@+id/tv_score_number"
+        app:layout_constraintTop_toTopOf="@+id/tv_score_number"
+        app:srcCompat="@drawable/ic_down" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_word"
+        style="@style/TextCenterWord"
+        android:textSize="@dimen/font_21"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/tv_question"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Word" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_level_score"
+        style="@style/TextCenterWord"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/tv_question"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="@string/_3_by_5" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_wg"
+        style="@style/TextCenterWord"
+        android:text="@string/wg"
+        android:textColor="@color/titleColor"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/tv_question"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progress_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:visibility="invisible"
+        app:indicatorSize="@dimen/word_holder_size"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_word"
+        app:layout_constraintEnd_toEndOf="@+id/tv_word"
+        app:layout_constraintStart_toStartOf="@+id/tv_word"
+        app:layout_constraintTop_toTopOf="@+id/tv_word" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_welcome"
+        style="@style/TextCurrentInfo"
+        android:text="@string/welcome"
+        android:textColor="@color/questionColor"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_word" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_congrats"
+        style="@style/TextCurrentInfo"
+        android:text="@string/congrats"
+        android:textColor="@color/green"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_word" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_sorry"
+        style="@style/TextCurrentInfo"
+        android:text="@string/sorry"
+        android:textColor="@color/red"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_word" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_game_intro"
+        style="@style/TextCurrentExplanation"
+        android:layout_width="0dp"
+        android:textColor="@color/questionColor"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_congrats"
+        tools:text="@string/please_click_start_to_play_the_game" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_level_result_positive"
+        style="@style/TextCurrentExplanation"
+        android:layout_width="0dp"
+        android:text="@string/please_click_start_to_play_next_level"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_congrats" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_level_result_negative"
+        style="@style/TextCurrentExplanation"
+        android:layout_width="0dp"
+        android:text="@string/you_cant_step_to_next_level_replay_the_level_to_get_more_points"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_congrats" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/spacing_40"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="@string/similar_question"
+        android:textColor="@color/questionColor"
+        android:textSize="@dimen/font_18"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/tv_answer_one"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_answer_one"
+        style="@style/TextAnswer"
+        android:layout_marginBottom="@dimen/spacing_20"
+        android:background="@drawable/bg_answers"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/tv_answer_two"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Answer 1" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_correct_answer_one"
+        style="@style/Icons"
+        android:layout_marginEnd="@dimen/answer_box_icon_margin_end"
+        android:layout_marginRight="@dimen/answer_box_icon_margin_end"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_answer_one"
+        app:layout_constraintEnd_toEndOf="@+id/tv_answer_one"
+        app:layout_constraintTop_toTopOf="@+id/tv_answer_one"
+        app:srcCompat="@drawable/ic_correct" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_wrong_answer_one"
+        style="@style/Icons"
+        android:layout_marginEnd="@dimen/answer_box_icon_margin_end"
+        android:layout_marginRight="@dimen/answer_box_icon_margin_end"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_answer_one"
+        app:layout_constraintEnd_toEndOf="@+id/tv_answer_one"
+        app:layout_constraintTop_toTopOf="@+id/tv_answer_one"
+        app:srcCompat="@drawable/ic_wrong" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_answer_two"
+        style="@style/TextAnswer"
+        android:layout_marginBottom="@dimen/spacing_40"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Answer 2" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_correct_answer_two"
+        style="@style/Icons"
+        android:layout_marginEnd="@dimen/answer_box_icon_margin_end"
+        android:layout_marginRight="@dimen/answer_box_icon_margin_end"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_answer_two"
+        app:layout_constraintEnd_toEndOf="@+id/tv_answer_two"
+        app:layout_constraintTop_toTopOf="@+id/tv_answer_two"
+        app:srcCompat="@drawable/ic_correct" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_wrong_answer_two"
+        style="@style/Icons"
+        android:layout_marginEnd="@dimen/answer_box_icon_margin_end"
+        android:layout_marginRight="@dimen/answer_box_icon_margin_end"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_answer_two"
+        app:layout_constraintEnd_toEndOf="@+id/tv_answer_two"
+        app:layout_constraintTop_toTopOf="@+id/tv_answer_two"
+        app:srcCompat="@drawable/ic_wrong" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_next_level"
+        style="@style/TextAnswer"
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="@dimen/spacing_40"
+        android:fontFamily="sans-serif-medium"
+        android:paddingStart="@dimen/spacing_20"
+        android:paddingEnd="@dimen/spacing_20"
+        android:text="@string/start"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_retry"
+        style="@style/TextAnswer"
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="@dimen/spacing_40"
+        android:fontFamily="sans-serif-medium"
+        android:paddingStart="@dimen/spacing_20"
+        android:paddingEnd="@dimen/spacing_20"
+        android:text="@string/retry"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
